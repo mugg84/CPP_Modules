@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+         #
+#    By: vboxuser1 <vboxuser1@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/12 10:07:31 by mmughedd          #+#    #+#              #
-#    Updated: 2024/05/12 14:30:29 by mmughedd         ###   ########.fr        #
+#    Updated: 2024/05/12 15:30:42 by vboxuser1        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
-SRC = phonebook.cpp
+SRC = main.cpp Phonebook.cpp Contact.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
