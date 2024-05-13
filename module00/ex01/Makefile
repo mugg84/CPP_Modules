@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vboxuser1 <vboxuser1@student.42.fr>        +#+  +:+       +#+         #
+#    By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/12 10:07:31 by mmughedd          #+#    #+#              #
-#    Updated: 2024/05/12 15:30:42 by vboxuser1        ###   ########.fr        #
+#    Updated: 2024/05/13 11:36:16 by mmughedd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CC = c++
 
 RM = rm -rf
 
-FLAGS = #-Wall -Wextra -Werror -std=c++98
+FLAGS = -g #-Wall -Wextra -Werror -std=c++98
 
 %.o: %.cpp
 	$(CC) $(FLAGS) -c $< -o $@ 

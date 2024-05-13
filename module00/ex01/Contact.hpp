@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vboxuser1 <vboxuser1@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 15:26:03 by vboxuser1         #+#    #+#             */
-/*   Updated: 2024/05/12 16:39:53 by vboxuser1        ###   ########.fr       */
+/*   Updated: 2024/05/13 11:10:40 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,15 @@ class	Contact
 		std::string _phoneNumber;
 		std::string _darkestSecret;
 		int			_index;
+		void		_formatTen(std::string str) const;
 	public:
 		Contact();
 		void		init(void);
 		void		setIndex(int i);
+		void		printContacts(void) const;
+		void		printSingleContact(void) const;
+		void		print_ast(int i) const;
+		bool		isEmpty(void) const;
 		std::string	getInput(std::string str);
 		~Contact();
 };
