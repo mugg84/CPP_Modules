@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vboxuser1 <vboxuser1@student.42.fr>        +#+  +:+       +#+         #
+#    By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/12 10:07:31 by mmughedd          #+#    #+#              #
-#    Updated: 2024/05/14 14:59:26 by vboxuser1        ###   ########.fr        #
+#    Updated: 2024/05/14 15:49:20 by mmughedd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = account
 
-SRC = test.cpp Account.cpp
+SRC = tests.cpp Account.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -20,7 +20,7 @@ CC = c++
 
 RM = rm -rf
 
-FLAGS = -g -Wall -Wextra -Werror -std=c++98
+FLAGS = -g #-Wall -Wextra -Werror -std=c++98
 
 %.o: %.cpp
 	$(CC) $(FLAGS) -c $< -o $@ 
