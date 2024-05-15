@@ -6,7 +6,7 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 10:07:34 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/13 12:13:20 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/05/15 09:26:15 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,12 @@ void	PhoneBook::searchContact(void) const
 
 	while (++i < 8 && !this->_contacts[i].isEmpty())
 		this->_contacts[i].printContacts();
+	if (i == 0)
+	{
+		std::cerr << "No contacts available" << std::endl;
+		std::cerr << std::endl;
+		return ;
+	}
 	while (1)
 	{
 		std::cout << "Please enter contact index:" << std::endl;

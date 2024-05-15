@@ -20,7 +20,7 @@ CC = c++
 
 RM = rm -rf
 
-FLAGS = -g #-Wall -Wextra -Werror -std=c++98
+FLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 %.o: %.cpp
 	$(CC) $(FLAGS) -c $< -o $@ 
@@ -36,4 +36,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean re
+.PHONY: all clean fclean re

@@ -6,13 +6,13 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:38:32 by vboxuser1         #+#    #+#             */
-/*   Updated: 2024/05/14 16:35:49 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/05/15 11:16:33 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
-#include <chrono>
+#include <ctime>
 #include <iomanip>
 
 int Account::_nbAccounts = 0;
@@ -22,9 +22,18 @@ int Account::_totalNbWithdrawals = 0;
 
 void	Account::_displayTimestamp( void )
 {
-	std::time_t now = std::time(nullptr);
-	std::tm* now_tm = std::localtime(&now);
-	std::cout << "[" << std::put_time(now_tm, "%Y%m%d_%H%M%S") << "]";
+	std::time_t t = std::time(NULL);
+	std::tm now = *localtime(&t);
+	std::cout
+		<< "["
+		<< (now.tm_year + 1900)
+		<< std::setfill('0')
+		<< std::setw(2) << now.tm_mon + 1
+		<< std::setw(2) << now.tm_mday << "_"
+		<< std::setw(2) << now.tm_hour
+		<< std::setw(2) << now.tm_min
+		<< std::setw(2) << now.tm_sec
+		<< "]";
 }
 
 Account::Account(int initial_deposit)
