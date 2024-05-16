@@ -6,7 +6,7 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 12:00:53 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/15 12:14:35 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/05/16 07:53:50 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define WEAPON_HPP
 
 #include <iomanip>
+#include <iostream>
 
 class	Weapon
 {

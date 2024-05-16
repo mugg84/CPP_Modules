@@ -6,13 +6,13 @@
 #    By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/12 10:07:31 by mmughedd          #+#    #+#              #
-#    Updated: 2024/05/16 08:02:17 by mmughedd         ###   ########.fr        #
+#    Updated: 2024/05/16 10:21:32 by mmughedd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie3
+NAME = sed
 
-SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+SRC = main.cpp sed.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

@@ -5,31 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/15 12:01:51 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/16 08:09:03 by mmughedd         ###   ########.fr       */
+/*   Created: 2024/05/16 10:57:20 by mmughedd          #+#    #+#             */
+/*   Updated: 2024/05/16 11:19:15 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "Harl.hpp"
 
-int main()
+int	main()
 {
+	Harl		harl;
+	std::string	input;
+
+	do
 	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
-	return 0;
+		std::cout << "Choose between DEBUG, INFO, WARNING, ERROR and EXIT" << std::endl;
+		std::cin >> input;
+		harl.complain(input);
+
+	} while (input.compare("EXIT"));
+	
+	return (0);
 }
