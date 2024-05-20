@@ -6,9 +6,12 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 14:15:40 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/19 14:32:55 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/05/20 08:27:40 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef POINT_HPP
+# define POINT_HPP
 
 #include "Fixed.hpp"
 
@@ -19,8 +22,16 @@ class Point {
 
 	public:
 		Point();
-		Point(const Fixed f1, const Fixed f2);
+		Point(const float c, const float y);
 		Point(const Point& other);
-		Point& operator=(const Point& other);
 		~Point();
+		
+		Point& operator=(const Point& other);
+
+		Fixed	getX() const;
+		Fixed	getY() const;
 };
+
+bool bsp( Point const a, Point const b, Point const c, Point const point);
+
+#endif

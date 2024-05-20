@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FIXED_HPP_
+# define FIXED_HPP_
+
 #include <iostream>
 
 class Fixed {
@@ -24,3 +27,5 @@ class Fixed {
 		int getRawBits() const;
 		void setRawBits(int const raw);
 };
+
+#endif

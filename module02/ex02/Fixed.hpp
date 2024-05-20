@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FIXED_HPP_
+# define FIXED_HPP_
+
 #include <iostream>
 #include <cmath>
 
@@ -53,5 +56,7 @@ class Fixed {
 		float	toFloat() const;
 		int		toInt() const;
 };
+
+#endif
 
 std::ostream & operator<<(std::ostream& o, const Fixed& i);
