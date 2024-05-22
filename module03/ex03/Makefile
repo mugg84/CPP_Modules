@@ -6,13 +6,13 @@
 #    By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/12 10:07:31 by mmughedd          #+#    #+#              #
-#    Updated: 2024/05/19 14:16:23 by mmughedd         ###   ########.fr        #
+#    Updated: 2024/05/22 20:05:12 by mmughedd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := bsp
+NAME := diamondTrap
 
-SRC := main.cpp Fixed.cpp Point.cpp bsp.cpp
+SRC := main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJ := $(addprefix obj/,$(SRC:.cpp=.o)) 
 
@@ -20,7 +20,7 @@ CC := c++
 
 RM := rm -rf
 
-FLAGS := -g -Wall -Wextra -Werror -std=c++98
+FLAGS := -g -Wall -Wextra -Werror -std=c++98 -Wshadow
 
 all: $(NAME)
 

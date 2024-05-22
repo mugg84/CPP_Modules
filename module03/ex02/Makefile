@@ -20,8 +20,7 @@ CC := c++
 
 RM := rm -rf
 
-FLAGS := -g -Wall -Wextra -Werror -std=c++98 -Wshadow
-
+FLAGS := -g -Wall -Wextra -Werror -std=c++98
 all: $(NAME)
 
 $(NAME): $(OBJ)
