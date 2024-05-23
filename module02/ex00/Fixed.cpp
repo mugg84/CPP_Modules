@@ -6,7 +6,7 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:40:39 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/18 13:24:57 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/05/23 10:40:57 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ Fixed::Fixed() {
 
 Fixed::Fixed(const Fixed& other) {
 	std::cout << "Copy constructor called" << std::endl;
-	//this->_fixedPoint = other._fixedPoint;
-	*this = other; //TODO:check
+	*this = other;
 }
 
 Fixed& Fixed::operator=(const Fixed& other){

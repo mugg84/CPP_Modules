@@ -6,7 +6,7 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 10:39:31 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/19 11:48:42 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/05/23 11:04:19 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,25 @@ int main( void ) {
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	return 0;
 }
+/*
+$> ./a.out
+Default constructor called  /a
+Int constructor called /b
+Float constructor called /c
+Copy constructor called /d
+Copy assignment operator called /d
+Float constructor called /a
+Copy assignment operator called /a
+Destructor called
+a is 1234.43
+b is 10
+c is 42.4219
+d is 10
+a is 1234 as integer
+b is 10 as integer
+c is 42 as integer
+d is 10 as integer
+Destructor called
+Destructor called
+Destructor called
+Destructo*/
