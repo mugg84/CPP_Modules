@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.hpp                                          :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 14:15:40 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/25 08:43:15 by mmughedd         ###   ########.fr       */
+/*   Created: 2024/05/25 08:58:07 by mmughedd          #+#    #+#             */
+/*   Updated: 2024/05/25 13:57:08 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POINT_HPP
-# define POINT_HPP
+#ifndef DOG_HPP
+#define DOG_HPP
 
-#include "Fixed.hpp"
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class Point {
-	private:
-		const Fixed	_x;
-		const Fixed	_y;
+class Dog: public Animal
+{
+private:
+	std::string _type;
+	Brain		*_brain;
+public:
+	Dog();
+	Dog(const Dog &other);
+	Dog &operator=(const Dog &other);
+	~Dog();
 
-	public:
-		Point();
-		Point(const float c, const float y);
-		Point(const Point &other);
-		~Point();
-		
-		Point& operator=(const Point& other);
-
-		Fixed	getX() const;
-		Fixed	getY() const;
+	void	makeSound() const;
 };
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif
