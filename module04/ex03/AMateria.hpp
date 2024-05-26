@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.hpp                                          :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 14:15:40 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/26 09:46:00 by mmughedd         ###   ########.fr       */
+/*   Created: 2024/05/26 10:33:13 by mmughedd          #+#    #+#             */
+/*   Updated: 2024/05/26 12:26:39 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POINT_HPP
-# define POINT_HPP
+#pragma once
 
-#include "Fixed.hpp"
+#include <iostream>
+#include <string>
+#include <ICharacter.hpp>
 
-class Point {
-	private:
-		const Fixed	_x;
-		const Fixed	_y;
-
+class AMateria
+{
+	protected:
+		std::string	_type;
 	public:
-		Point();
-		Point(const float c, const float y);
-		Point(const Point &other);
-		~Point();
-		
-		Point& operator=(const Point& other);
-
-		Fixed	getX() const;
-		Fixed	getY() const;
+		AMateria();
+		AMateria(std::string const &type);
+		AMateria(const AMateria &other);
+		virtual ~AMateria();
+	
+		std::string const & getType() const; //Returns the materia type
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
 };
-
-bool bsp( Point const a, Point const b, Point const c, Point const point);
-
-#endif

@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.hpp                                          :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 14:15:40 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/26 09:46:00 by mmughedd         ###   ########.fr       */
+/*   Created: 2024/05/26 10:34:50 by mmughedd          #+#    #+#             */
+/*   Updated: 2024/05/26 13:12:54 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POINT_HPP
-# define POINT_HPP
+#pragma once
 
-#include "Fixed.hpp"
+#include <iostream>
+#include "AMateria.hpp"
 
-class Point {
-	private:
-		const Fixed	_x;
-		const Fixed	_y;
-
+class ICharacter
+{
 	public:
-		Point();
-		Point(const float c, const float y);
-		Point(const Point &other);
-		~Point();
-		
-		Point& operator=(const Point& other);
-
-		Fixed	getX() const;
-		Fixed	getY() const;
+		virtual ~ICharacter() {};
+		virtual std::string const &getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;
 };
-
-bool bsp( Point const a, Point const b, Point const c, Point const point);
-
-#endif

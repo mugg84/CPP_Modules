@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.hpp                                          :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/19 14:15:40 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/26 09:46:00 by mmughedd         ###   ########.fr       */
+/*   Created: 2024/05/26 10:48:46 by mmughedd          #+#    #+#             */
+/*   Updated: 2024/05/26 13:02:23 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POINT_HPP
-# define POINT_HPP
+#pragma once
 
-#include "Fixed.hpp"
+#include "AMateria.hpp"
 
-class Point {
-	private:
-		const Fixed	_x;
-		const Fixed	_y;
-
+class Ice : public AMateria{
 	public:
-		Point();
-		Point(const float c, const float y);
-		Point(const Point &other);
-		~Point();
-		
-		Point& operator=(const Point& other);
+		Ice();
+		Ice(Ice const &other);
+		Ice &operator=(Ice const &other);
+		virtual	~Ice();
 
-		Fixed	getX() const;
-		Fixed	getY() const;
+		AMateria* clone() const; //TODO: virtual?
+		void use(ICharacter& target);
 };
-
-bool bsp( Point const a, Point const b, Point const c, Point const point);
-
-#endif
