@@ -6,7 +6,7 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 13:22:19 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/26 14:04:41 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/05/26 15:18:04 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,13 @@ Character::Character(const Character &other){
 }
 
 Character::~Character(){
-	for (int i = 0; i < 4; i++)
+	int i = 0;
+
+	for (i; i < 4; i++)
 		delete _slots[i];
+	i = 0;
+	while (_unequipped[i])
+		delete _unequipped[i++];
 	std::cout << "* The character named " << _name << " died. *" << std::endl;
 }
 
@@ -50,7 +55,14 @@ void Character::equip(AMateria* m){
 }
 
 void Character::unequip(int idx){
-
+	if (_slots[idx])
+	{
+		_unequipped.push_back(_slots[idx]);
+		_slots[idx] = NULL;
+		std::cout << "* Materia " << _slots[idx]->getType() << " was unequipped. *" << std::endl;
+	}
+	else
+		std::cout << "* No materia in slot " << idx << ". *" << std::endl;
 }
 
 void Character::use(int idx, ICharacter& target){
