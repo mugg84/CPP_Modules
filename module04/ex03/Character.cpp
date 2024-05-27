@@ -6,7 +6,7 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 13:22:19 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/26 15:18:04 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/05/27 12:49:00 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,46 @@
 Character::Character(std::string name) : _name(name){
 	for (int i = 0; i < 4; i++)
 		_slots[i] = NULL;
-	std::cout << "* A caracter named " << _name << " was created. *" << std::endl;
+	//std::cout << "* A character named " << _name << " was created *" << std::endl;
 }
 
 Character::Character(const Character &other){
-
+	for (int i = 0; i < 4; i++)
+	{
+		if (_slots[i])
+			delete _slots[i];
+		if (other._slots[i])
+			_slots[i] = other._slots[i]->clone();
+		else
+			_slots[i] = NULL;
+	}
+	_unequipped = other._unequipped;
+	//std::cout << "* A character named " << _name << " was copied *" << std::endl;
 }
 
 Character::~Character(){
-	int i = 0;
-
-	for (i; i < 4; i++)
+	for (int i = 0; i < 4; i++)
 		delete _slots[i];
-	i = 0;
-	while (_unequipped[i])
-		delete _unequipped[i++];
-	std::cout << "* The character named " << _name << " died. *" << std::endl;
+	for (size_t i = 0; i < _unequipped.size(); i++)
+			delete _unequipped[i];
+	//std::cout << "* The character named " << _name << " died *" << std::endl;
 }
 
 Character &Character::operator=(const Character &other){
-
+	if (this != &other)
+	{
+		_name = other._name;
+		for (int i = 0; i < 4; i++)
+		{
+			delete _slots[i];
+			if (other._slots[i])
+				_slots[i] = other._slots[i]->clone();
+			else
+				_slots[i] = NULL;
+		}
+	}
+	_unequipped = other._unequipped;
+	return *this;
 }
 
 std::string const &Character::getName() const {
@@ -47,22 +67,24 @@ void Character::equip(AMateria* m){
 		if (!_slots[i])
 		{
 			_slots[i] = m;
-			std::cout << "* Materia " << m->getType() << " was equipped on slot " << i << ". *" << std::endl;
+			std::cout << "* Materia " << m->getType() << " was equipped on slot " << i << " *" << std::endl;
 			return ;
 		}
 	}
-	std::cout << "* All slots full. *" << std::endl;
+	std::cout << "* All slots full *" << std::endl;
 }
 
 void Character::unequip(int idx){
-	if (_slots[idx])
+	if (idx < 0 || idx > 3)
+		std::cout << "* Please select a slot from 0 to 4 *" << std::endl;
+	else if (_slots[idx])
 	{
 		_unequipped.push_back(_slots[idx]);
+		std::cout << "* Materia " << _slots[idx]->getType() << " from slot " << idx << " was unequipped *" << std::endl;
 		_slots[idx] = NULL;
-		std::cout << "* Materia " << _slots[idx]->getType() << " was unequipped. *" << std::endl;
 	}
 	else
-		std::cout << "* No materia in slot " << idx << ". *" << std::endl;
+		std::cout << "* No materia in slot " << idx << " *" << std::endl;
 }
 
 void Character::use(int idx, ICharacter& target){

@@ -6,7 +6,7 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 10:48:46 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/26 13:02:23 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/05/27 12:15:33 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ class Ice : public AMateria{
 		Ice &operator=(Ice const &other);
 		virtual	~Ice();
 
-		AMateria* clone() const; //TODO: virtual?
+		AMateria* clone() const;
 		void use(ICharacter& target);
 };

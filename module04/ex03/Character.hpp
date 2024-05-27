@@ -6,7 +6,7 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 12:10:55 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/26 15:12:27 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/05/27 11:41:11 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 
 class Character : public ICharacter{
 	private:
-		std::string				_name;
-		AMateria*				_slots[4];
-		std::vector<AMateria*>	_unequipped;	
+		std::string					_name;
+		AMateria*					_slots[4];
+		std::vector<AMateria*>		_unequipped;	
 	public:
 		Character(std::string name);
 		Character(const Character &other);
