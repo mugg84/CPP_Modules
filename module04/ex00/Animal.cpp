@@ -6,7 +6,7 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 08:54:49 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/25 14:05:31 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/06/02 09:18:46 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ Animal &Animal::operator=(const Animal &other) {
 	return *this;
 }
 
-Animal::~Animal(){}
+Animal::~Animal(){
+	std::cout << "The animal is dead" << std::endl << std::endl;
+}
 
 void	Animal::makeSound() const{
 	std::cout << "The animal is making a sound" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 06:14:41 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/25 14:20:01 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/06/02 09:45:18 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,25 @@
 
 int main()
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	Animal* animals[10];
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << std::endl << std::endl << "*************************" << std::endl << std::endl;
+		if (i <= 5)
+			animals[i] = new Dog();
+		else
+			animals[i] = new Cat();
+	}
 
-	delete j;//should not create a leak
-	delete i;
-
+	std::cout << std::endl << std::endl << "*************************" << std::endl;
+	
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << std::endl << std::endl << "*************************" << std::endl << std::endl;
+		delete animals[i];
+	}
+	
+	std::cout << std::endl << std::endl << "*************************" << std::endl;
+	
 	return 0;
 }

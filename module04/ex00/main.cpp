@@ -6,7 +6,7 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 06:14:41 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/25 12:45:23 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/06/02 09:54:53 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,38 @@
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	delete meta;
-	delete j;
-	delete i;
+	std::cout << std::endl << std::endl << "*************************" << std::endl << std::endl;
+
+	const Animal* unknown = new Animal();
+	const Animal* dog = new Dog();
+	const Animal* cat = new Cat();
 
 	std::cout << std::endl << std::endl << "*************************" << std::endl << std::endl;
+
+	std::cout << dog->getType() << " " << std::endl;
+	std::cout << cat->getType() << " " << std::endl;
+	std::cout << unknown->getType() << " " << std::endl;
+
+	std::cout << std::endl << std::endl << "*************************" << std::endl << std::endl;
+
+	cat->makeSound();
+	dog->makeSound();
+	unknown->makeSound();
+
+	std::cout << std::endl << std::endl << "*************************" << std::endl << std::endl;
+
+	delete unknown;
+	delete dog;
+	delete cat;
+
+	std::cout << std::endl << "*************************" << std::endl << std::endl;
 
 	const WrongAnimal *wrong = new WrongCat();
 	std::cout << wrong->getType() << " " << std::endl;
 	wrong->makeSound();
 	delete wrong;
+
+	std::cout << std::endl << std::endl << "*************************" << std::endl << std::endl;
 
 	return 0;
 }

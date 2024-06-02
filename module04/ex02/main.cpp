@@ -6,11 +6,11 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 06:14:41 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/25 14:14:40 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/06/02 09:52:55 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
@@ -18,11 +18,18 @@
 
 int main()
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	std::cout << std::endl << std::endl << "*************************" << std::endl << std::endl;
+
+	const AAnimal* j = new Dog();
+	const AAnimal* i = new Cat();
+	//const AAnimal* z = new AAnimal(); 
 	
+	std::cout << std::endl << "*************************" << std::endl << std::endl;
+
 	i->makeSound();
 	j->makeSound();
+
+	std::cout << std::endl << std::endl << "*************************" << std::endl << std::endl;
 
 	delete j;
 	delete i;

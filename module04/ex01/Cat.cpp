@@ -6,15 +6,13 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 09:00:09 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/25 14:03:47 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/06/02 09:26:13 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal::Animal("Cat"){
-	_type = Animal::getType();
-	_brain = new Brain();
+Cat::Cat() : Animal::Animal("Cat"), _type("Cat"), _brain(new Brain()){
 	std::cout << "A cat is born" << std::endl;
 }
 

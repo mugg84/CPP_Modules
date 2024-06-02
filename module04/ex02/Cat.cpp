@@ -6,19 +6,17 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 09:00:09 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/25 14:03:47 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/06/02 09:51:52 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal::Animal("Cat"){
-	_type = Animal::getType();
-	_brain = new Brain();
-	std::cout << "A cat is born" << std::endl;
+Cat::Cat() : AAnimal::AAnimal("Cat"), _type("Cat"), _brain(new Brain()){
+	std::cout << "A cat is born" << std::endl << std::endl;
 }
 
-Cat::Cat(const Cat &other) : Animal::Animal(other){
+Cat::Cat(const Cat &other) : AAnimal::AAnimal(other){
 	*this = other;
 	std::cout << "The cat is copied" << std::endl;
 }

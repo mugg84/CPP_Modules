@@ -6,13 +6,13 @@
 #    By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/12 10:07:31 by mmughedd          #+#    #+#              #
-#    Updated: 2024/05/25 14:07:32 by mmughedd         ###   ########.fr        #
+#    Updated: 2024/06/02 09:48:19 by mmughedd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := poly02
 
-SRC := main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRC := main.cpp AAnimal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 OBJ := $(addprefix obj/,$(SRC:.cpp=.o)) 
 

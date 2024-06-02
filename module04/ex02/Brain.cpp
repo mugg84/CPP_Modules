@@ -6,16 +6,14 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 12:48:25 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/25 14:00:49 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/06/02 09:40:11 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
-Brain::Brain(){
-	ideas = new std::string[100]();
+Brain::Brain() : ideas(new std::string[100]){
 	std::cout << "A brain is initialized" << std::endl;
-
 }
 
 Brain::Brain(const Brain &other){

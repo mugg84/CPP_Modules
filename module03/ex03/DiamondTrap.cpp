@@ -6,7 +6,7 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 11:01:57 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/22 20:26:21 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/06/01 10:56:31 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ DiamondTrap::DiamondTrap(std::string name):	ClapTrap(name + "_clap_name"), ScavT
 }
 
 DiamondTrap::~DiamondTrap(){
-	std::cout << "DiamondTrap " << _name << " was destroyed." << std::endl << std::endl;
+	std::cout << "DiamondTrap " << _name << " was destroyed." << std::endl;
 }
 
 void DiamondTrap::whoAmI(){
-	std::cout << "DiamondTrap " << _name << " ClapTrap name is " << ClapTrap::_name << std::endl;
+	std::cout << "DiamondTrap " << _name << " ClapTrap name is " << ClapTrap::_name << std::endl << std::endl;
 }

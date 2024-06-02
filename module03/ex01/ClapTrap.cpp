@@ -6,13 +6,13 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 06:15:21 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/22 09:09:52 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/06/01 10:37:17 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0){
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(20){
 	std::cout << "ClapTrap " << this->_name << " was created." << std::endl;
 }
 
@@ -20,7 +20,6 @@ ClapTrap::ClapTrap(const ClapTrap& other){
 	*this = other;
 	std::cout << "ClapTrap " << this->_name << " was copied." << std::endl;
 };
-
 
 ClapTrap::~ClapTrap(){
 	std::cout << "ClapTrap " << this->_name << " was destroyed." << std::endl;
@@ -48,13 +47,13 @@ void ClapTrap::attack(const std::string& target){
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
-	if (this->_hitPoints <= amount)
-		{
-			std::cout << "ClapTrap " << this->_name << " is dead!" << std::endl;
-			return;
-		}
-		std::cout << "ClapTrap " << this->_name << " takes " << amount << " points of damage!" << std::endl;
-		this->_hitPoints -= amount;
+	if (_hitPoints <= amount)
+		std::cout << "ClapTrap " << _name << " is dead!" << std::endl;
+	else
+		std::cout << "ClapTrap " << _name << " takes " << amount << " points of damage!" << std::endl;
+	_hitPoints -= amount;
+	if (_hitPoints < 0)
+		_hitPoints = 0;
 }
 
 void ClapTrap::beRepaired(unsigned int amount){

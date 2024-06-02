@@ -6,7 +6,7 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 08:57:48 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/25 12:45:55 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/06/02 09:27:27 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Cat: public Animal
 {
 	private:
-		std::string type;
+		std::string _type;
 	public:
 		Cat();
 		Cat(const Cat &other);

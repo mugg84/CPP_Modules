@@ -6,17 +6,17 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 08:58:07 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/25 13:57:08 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/06/02 09:49:31 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 #define DOG_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Dog: public Animal
+class Dog: public AAnimal
 {
 private:
 	std::string _type;

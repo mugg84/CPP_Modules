@@ -6,7 +6,7 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 08:58:07 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/25 13:57:08 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/06/02 09:23:06 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Dog: public Animal
 {
 private:
-	std::string _type;
+	std::string	_type;
 	Brain		*_brain;
 public:
 	Dog();

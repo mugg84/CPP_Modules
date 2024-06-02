@@ -6,14 +6,13 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 08:59:24 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/25 14:06:18 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/06/02 09:30:04 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat() : WrongAnimal::WrongAnimal("wrong cat"){
-	_type = WrongAnimal::getType();
+WrongCat::WrongCat() : WrongAnimal::WrongAnimal("wrong cat"), _type("wrong cat"){
 	std::cout << "A wrong cat is born" << std::endl;
 }
 

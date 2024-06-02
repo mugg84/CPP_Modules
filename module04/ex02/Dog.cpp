@@ -6,19 +6,17 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 09:00:26 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/25 14:03:56 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/06/02 09:51:48 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal::Animal("Dog"){
-	_type = Animal::getType();
-	_brain = new Brain();
-	std::cout << "A dog is born" << std::endl;
+Dog::Dog() : AAnimal::AAnimal("Dog"), _type("Dog"), _brain(new Brain()){
+	std::cout << "A dog is born" << std::endl << std::endl;
 }
 
-Dog::Dog(const Dog &other) : Animal::Animal(other){
+Dog::Dog(const Dog &other) : AAnimal::AAnimal(other){
 	*this = other;
 	std::cout << "The dog is copied" << std::endl;
 }

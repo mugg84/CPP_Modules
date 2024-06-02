@@ -1,45 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 08:54:49 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/25 14:20:39 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/06/02 09:53:18 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal() : _type("Unknown"){
+AAnimal::AAnimal() : _type("Unknown"){
 	std::cout << "An animal is born" << std::endl;
 }
 
-Animal::Animal(std::string type) : _type(type){
+AAnimal::AAnimal(std::string type) : _type(type){
 	std::cout << "An animal is born" << std::endl;
 }
 
-Animal::Animal(const Animal &other) {
+AAnimal::AAnimal(const AAnimal &other) {
 	std::cout << "The animal is copied" << std::endl;
 	*this = other;
 }
 
-Animal &Animal::operator=(const Animal &other) {
+AAnimal &AAnimal::operator=(const AAnimal &other) {
 	if (this != &other)
 		this->_type = other.getType();
 	std::cout << "The animal is cloned" << std::endl;
 	return *this;
 }
 
-Animal::~Animal(){
-	std::cout << "The animal is dead" << std::endl;
+AAnimal::~AAnimal(){
+	std::cout << "The animal is dead" << std::endl << std::endl;
 }
 
-void	Animal::makeSound() const{
+void	AAnimal::makeSound() const{
 	std::cout << "The animal is making a sound" << std::endl;
 }
 
-std::string	Animal::getType() const{
+std::string	AAnimal::getType() const{
 	return _type;
 }

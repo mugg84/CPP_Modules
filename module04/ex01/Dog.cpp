@@ -6,15 +6,13 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 09:00:26 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/25 14:03:56 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/06/02 09:29:14 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal::Animal("Dog"){
-	_type = Animal::getType();
-	_brain = new Brain();
+Dog::Dog() : Animal::Animal("Dog"), _type("Dog"), _brain(new Brain()){
 	std::cout << "A dog is born" << std::endl;
 }
 

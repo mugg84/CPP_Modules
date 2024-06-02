@@ -6,14 +6,13 @@
 /*   By: mmughedd <mmughedd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 09:00:26 by mmughedd          #+#    #+#             */
-/*   Updated: 2024/05/25 14:05:57 by mmughedd         ###   ########.fr       */
+/*   Updated: 2024/06/02 09:28:01 by mmughedd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal::Animal("Dog"){
-	_type = Animal::getType();
+Dog::Dog() : Animal::Animal("Dog"), _type("Dog"){
 	std::cout << "A dog is born" << std::endl;
 }
 
